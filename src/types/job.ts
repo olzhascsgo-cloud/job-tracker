@@ -6,4 +6,3 @@
   position: string;
   status: JobStatus;
 };
-  export type SortOption = "newest" | "oldest" | "company-asc" | "company-desc"
