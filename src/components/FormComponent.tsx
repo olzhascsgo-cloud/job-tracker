@@ -1,6 +1,6 @@
 
-import useToast from "./toast/useToast"
-import { JobStatus } from "./types/job"
+import useToast from "../toast/useToast"
+import { JobStatus } from "../types/job"
 
 type FormProps = {
       company: string
@@ -11,6 +11,8 @@ type FormProps = {
       setPos: React.Dispatch<React.SetStateAction<string>>
       setStatus: React.Dispatch<React.SetStateAction<JobStatus>>
       onSubmit: (event: React.FormEvent<HTMLFormElement>)=> void
+      notes: string
+      setNotes: React.Dispatch<React.SetStateAction<string>>
      }
      
 
@@ -21,11 +23,13 @@ const toast = useToast()
 
        
   return (
+                  
                    <form onSubmit= {(e)=>{
                     props.onSubmit(e)
                     toast.addToast("success","Сохранено!")
                   }}> 
                     <div>
+                      <textarea value={props.notes} onChange={(e)=> props.setNotes(e.target.value)}></textarea>
                      <label>Company</label> 
                      <input value={props.company}  onChange={(e) => props.setCom(e.target.value)} /> </div> 
                      <div>
@@ -38,8 +42,8 @@ const toast = useToast()
                             <select value={props.status} onChange={(e) => props.setStatus(e.target.value as JobStatus)}> 
                           <option value="invited">invited</option>
                            <option value="applied">applied</option> 
-                           <option value="applied">interview</option> 
-                           <option value="applied">rejected</option> 
+                           <option value="interview">interview</option> 
+                           <option value="rejected">rejected</option> 
                            <option value="offer">offer</option> </select> 
                            </div>
                           <button type="submit">

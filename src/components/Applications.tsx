@@ -1,5 +1,5 @@
-import JobActionsComponent from "./JobActionComp";
-import { Job, JobStatus } from "./types/job";
+
+import { Job, JobStatus } from "../types/job";
 
 type Props = {
   jobs: Job[]
@@ -7,6 +7,7 @@ type Props = {
   setFilter: (value: JobStatus | "all") => void
   onDelete: (id:number) => void
   onEdit: (id:number) => void
+  onChangeStatus: (id: number, newStatus: JobStatus) => void;
 }
 
 function Applications(props: Props) {
