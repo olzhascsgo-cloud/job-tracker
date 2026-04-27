@@ -1,3 +1,145 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.job-board {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(160px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.job-column {
+  background: #1f2937;
+  border-radius: 12px;
+  padding: 12px;
+  min-height: 300px;
+}
+.job-card{
+  overflow: hidden;
+  background:#111827;
+  border:1px solid #374151;
+  border-radius:14px;
+  padding:16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+ min-height:240px;
+}
+.job-position,
+.job-notes {
+  overflow-wrap: anywhere;
+}
+.job-card-header {
+  display:flex;
+  justify-content:space-between;
+}
+
+.job-card h3 {
+  margin: 0;
+  font-size: 16px;
+  overflow-wrap: anywhere;
+}
+
+.job-status {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #374151;
+}
+
+.job-position {
+  margin: 8px 0;
+}
+
+.job-notes {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.job-date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+.job-form {
+  max-width: 520px;
+  margin: 0 auto 24px;
+  padding: 16px;
+  border: 1px solid #374151;
+  border-radius: 12px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.view-toggle button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.stats {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px solid #374151;
+  border-radius: 12px;
+}
+.stat-bar-track {
+  border-radius: 999px;
+  overflow: hidden;
+}
+.job-status.offer {
+  background: #166534;
+}
+
+.job-status.interview {
+  background: #92400e;
+}
+.job-status.applied {
+  background: blue
+}
+.job-status.rejected {
+  background: red
+}
+.job-status.invited {
+  background: tan
+}
+.job-list{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+ gap:20px;
+}
+.stat-bar-fill {
+  border-radius: 999px;
+}
+
+.delete-btn {
+  background:#7f1d1d;
+}
+.form-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  margin-top: 12px;
+}
+
 .toast {
   padding: 12px 16px;
   border-radius: 8px;
@@ -18,4 +160,15 @@
 
 .toast.info {
   background: blue;
+}
+button,
+select {
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+@media (max-width: 900px) {
+  .job-board {
+    grid-template-columns: 1fr;
+  }
 }

@@ -6,6 +6,7 @@ import { Job, JobStatus } from "./types/job";
 import useLocalStorage from "./hooks/useLocalStorage";
 import JobBoard from "./components/JobBoard";
 import JobStats from "./components/JobStats";
+import "./App.css"
 
 function App() {
   const [company, setCom] = useState<string>("");
@@ -93,6 +94,7 @@ function App() {
   };
 
   return (
+    <div className="app">
     <ToastProvider>
       <FormComponent
         company={company}
@@ -109,7 +111,7 @@ function App() {
       />
 
       <JobStats jobs={jobs} />
-      <div>
+      <div className="view-toggle">
        <button onClick={() => setViewMode("list")}>
     List
   </button>
@@ -136,6 +138,7 @@ function App() {
   />
 )}
     </ToastProvider>
+    </div>
   );
 }
 

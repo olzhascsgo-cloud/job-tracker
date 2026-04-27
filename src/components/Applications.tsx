@@ -1,5 +1,6 @@
 
 import { Job, JobStatus } from "../types/job";
+import JobCard from "./JobCard";
 
 type Props = {
   jobs: Job[]
@@ -17,12 +18,12 @@ function Applications(props: Props) {
      
      
    
-  return (                  <div>
+  return (                  <div className="job-list">
                             <h2>My Applications</h2> 
                           <select value={props.filterApp} 
                           onChange={(e)=> props.setFilter(e.target.value as JobStatus)}>
                              <option value="all">all</option>
-                          <option value="invited">invited</option>
+                          <option value="invited">invited</option>Ghbyz
                            <option value="applied">applied</option> 
                            <option value="interview">interview</option>
                            <option value="rejected">rejected</option>
@@ -32,18 +33,14 @@ function Applications(props: Props) {
                                 :
                                 (filteredJobs.map((job) => (
                                      
-                                 <div key={job.id} >
-                                  {job.company} - {job.position}
-                                  
-                                    
-                               <button onClick={() => props.onDelete(job.id)}>
-                                              Delete
-                                            </button>
-
-                              <button onClick={() => props.onEdit(job.id)}>
-                                                  Edit
-                                              </button>
-                                               </div>
+                                 <JobCard
+                
+                                       key={job.id}
+                                         job={job}
+                                      onDelete={props.onDelete}
+                                      onEdit={props.onEdit}
+                                        onChangeStatus={props.onChangeStatus}
+                                     />
                                 ))
                                 )}
                                 </div>

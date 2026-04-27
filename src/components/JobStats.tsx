@@ -48,7 +48,7 @@ function JobStats(props: Props) {
   const totalJobs = props.jobs.length;
 
   return (
-    <div>
+    <div className="stats">
       <h2>Stats</h2>
         <p>Total applications: {totalJobs}</p>
         <p>Applied this week: {appliedThisWeek}</p>

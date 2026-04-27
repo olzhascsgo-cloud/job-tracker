@@ -15,9 +15,9 @@ function StatBar(props: Props) {
   return (
     <div>
       
-      <p>
+      <h3>
         {props.label}: {props.count} ({percent}%)
-      </p>
+      </h3>
 
       <div
         style={{

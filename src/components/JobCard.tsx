@@ -13,17 +13,27 @@ function JobCard({ job, onDelete, onEdit, onChangeStatus }: Props) {
  
   return (
     <div className="job-card">
-        {job.notes &&  <p>Notes: {job.notes}</p>}
-        
-      <h3>{job.company}</h3>
-      <p>{job.position}</p>
-      <span>{job.status}</span>
-      <span>{job.createdAt ? new Date(job.createdAt).toLocaleDateString() : "No date"}</span>
+  <div className="job-card-header">
+    <h3>{job.company}</h3>
+    <span className="job-status">{job.status}</span>
+  </div>
+
+  <p className="job-position">{job.position}</p>
+
+  {job.notes && (
+    <p className="job-notes">Notes: {job.notes}</p>
+  )}
+
+  <p className="job-date">
+    {job.createdAt
+      ? new Date(job.createdAt).toLocaleDateString()
+      : "No date"}
+  </p>
       
       <div className="actions">
         <label>Move to:</label>
 
-        <select
+        <select className={`job-status ${job.status}`}
           value={job.status}
           onChange={(e) =>
             onChangeStatus(job.id, e.target.value as JobStatus)
@@ -37,7 +47,7 @@ function JobCard({ job, onDelete, onEdit, onChangeStatus }: Props) {
         </select>
 
         <button onClick={() => onEdit(job.id)}>Edit</button>
-        <button onClick={() => onDelete(job.id)}>Delete</button>
+        <button className="delete-btn" onClick={() => onDelete(job.id)}>Delete</button>
       </div>
     </div>
   );

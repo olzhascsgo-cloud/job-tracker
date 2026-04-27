@@ -23,32 +23,40 @@ const toast = useToast()
 
        
   return (
-                  
+                 
                    <form onSubmit= {(e)=>{
                     props.onSubmit(e)
                     toast.addToast("success","Сохранено!")
                   }}> 
-                    <div>
-                      <textarea value={props.notes} onChange={(e)=> props.setNotes(e.target.value)}></textarea>
-                     <label>Company</label> 
-                     <input value={props.company}  onChange={(e) => props.setCom(e.target.value)} /> </div> 
-                     <div>
+                    <div className="job-form">
+                      <div className="form-row">
+                      <label>Notes</label>
+                      <textarea placeholder = "Notes" value={props.notes} onChange={(e)=> props.setNotes(e.target.value)}></textarea>
+                      </div>
+                      <div className="form-row">
+                      <label>Company</label> 
+                     <input placeholder="company" value={props.company}  onChange={(e) => props.setCom(e.target.value)} /> </div> 
+                     <div className="form-row">
                        <label>Position</label>
-                        <input value={props.position}  onChange={(e) => props.setPos(e.target.value)} /> 
+                        <input placeholder="Position" value={props.position}  onChange={(e) => props.setPos(e.target.value)} /> 
                         </div>
 
                         
-                         <div>
+                         <div className="form-actions">
                             <select value={props.status} onChange={(e) => props.setStatus(e.target.value as JobStatus)}> 
                           <option value="invited">invited</option>
                            <option value="applied">applied</option> 
                            <option value="interview">interview</option> 
                            <option value="rejected">rejected</option> 
                            <option value="offer">offer</option> </select> 
-                           </div>
+                           
                           <button type="submit">
                               {props.editingId ? "Update" : "Save"}
-      </button> </form> 
+                              
+      </button>
+      </div>
+      </div> </form> 
+      
                            
 )}
 
