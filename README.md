@@ -1,16 +1,28 @@
-# React + Vite
+# Job Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo:
+https://job-tracker-sooty-nine.vercel.app/
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Add, edit and delete job applications
+- Search, filter and sort applications
+- Kanban-style board view
+- Status pipeline (Applied, Interview, Offer, Rejected)
+- Notes for each application
+- Analytics dashboard with status stats
+- LocalStorage persistence
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- CSS
+- Vercel
 
-## Expanding the ESLint configuration
+## Future Improvements
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Drag and drop with dnd-kit
+- Backend integration
+- Authentication
