@@ -1,0 +1,29 @@
+{
+  "jobs": [
+    {
+      "id": "IQ1JtVxcdmE",
+      "company": "аываыаыаыаыt45t54",
+      "position": "аыаыаываывt45t54",
+      "status": "applied",
+      "notes": "аываы",
+      "createdAt": "2026-05-01T06:03:25.947Z"
+    },
+    {
+      "id": "GdeX28G8PHs",
+      "company": "y45y45y45y",
+      "position": "45y45y54y45y54",
+      "status": "interview",
+      "notes": "t45t45",
+      "createdAt": "2026-05-05T05:10:18.484Z"
+    },
+    {
+      "id": "F52W4uSj-z8",
+      "company": "rwerwerwe",
+      "position": "werwrwerwerw",
+      "status": "applied",
+      "notes": "werwe",
+      "createdAt": "2026-05-05T05:10:42.188Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

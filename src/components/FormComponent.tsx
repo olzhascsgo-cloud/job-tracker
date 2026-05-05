@@ -13,6 +13,7 @@ type FormProps = {
       onSubmit: (event: React.FormEvent<HTMLFormElement>)=> void
       notes: string
       setNotes: React.Dispatch<React.SetStateAction<string>>
+      loading: boolean
      }
      
 
@@ -50,10 +51,15 @@ const toast = useToast()
                            <option value="rejected">rejected</option> 
                            <option value="offer">offer</option> </select> 
                            
-                          <button type="submit">
-                              {props.editingId ? "Update" : "Save"}
-                              
-      </button>
+                          <button type="submit" disabled={props.loading}>
+                            {props.loading
+                                  ? props.editingId
+                                  ? "Обновляю..."
+                                  : "Сохраняю..."
+                                                   : props.editingId
+                                                     ? "Update"
+                                                      : "Save"}
+                                                        </button>
       </div>
       </div> </form> 
       
